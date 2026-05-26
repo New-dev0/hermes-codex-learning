@@ -17,7 +17,6 @@
     "agent-learning"
   ],
   "skills": "./skills/",
-  "hooks": "./hooks/hooks.json",
   "interface": {
     "displayName": "Hermes Codex Learning",
     "shortDescription": "Export Codex learning signals into Hermes.",

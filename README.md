@@ -4,7 +4,7 @@ A Codex plugin that helps **Hermes Agent** learn from Codex sessions running on 
 
 The plugin packages Codex lifecycle hooks and a reusable Codex skill. Once installed and trusted in Codex, the hooks observe Codex sessions, redact sensitive values, write structured learning events into the local Hermes home, and export per-session summaries that Hermes can use to improve skills, memories, and tool reliability notes.
 
-This is not a SwitchX plugin. It is for Hermes Agent self-learning and self-improvement.
+It is for Hermes Agent self-learning and self-improvement.
 
 ## What it does
 
