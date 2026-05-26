@@ -1,0 +1,42 @@
+{
+  "name": "hermes-codex-learning",
+  "version": "0.1.0",
+  "description": "Local Codex hooks and skills that export learning signals into Hermes Agent.",
+  "author": {
+    "name": "Devesh Pal",
+    "url": "https://github.com/New-dev0"
+  },
+  "homepage": "https://github.com/New-dev0/hermes-codex-learning",
+  "repository": "https://github.com/New-dev0/hermes-codex-learning",
+  "license": "MIT",
+  "keywords": [
+    "hermes",
+    "codex",
+    "hooks",
+    "self-improvement",
+    "agent-learning"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Hermes Codex Learning",
+    "shortDescription": "Export Codex learning signals into Hermes.",
+    "longDescription": "Adds Codex lifecycle hooks and a skill that help a local Hermes Agent learn from Codex sessions by writing redacted event logs, failure patterns, correction candidates, and session summaries into the Hermes home directory.",
+    "developerName": "Devesh Pal",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Automation"
+    ],
+    "websiteURL": "https://github.com/New-dev0/hermes-codex-learning",
+    "privacyPolicyURL": "https://github.com/New-dev0/hermes-codex-learning#privacy",
+    "termsOfServiceURL": "https://github.com/New-dev0/hermes-codex-learning#license",
+    "defaultPrompt": [
+      "Use Hermes learning bridge for this coding session.",
+      "Export useful Codex failures for Hermes to learn.",
+      "Review this repo with Hermes-compatible learning notes."
+    ],
+    "brandColor": "#10A37F"
+  }
+}

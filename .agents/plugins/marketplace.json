@@ -1,0 +1,20 @@
+{
+  "name": "hermes-codex-learning-marketplace",
+  "interface": {
+    "displayName": "Hermes Codex Learning"
+  },
+  "plugins": [
+    {
+      "name": "hermes-codex-learning",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hermes-codex-learning"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
