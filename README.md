@@ -46,7 +46,7 @@ codex plugin marketplace add .
 Or from GitHub after publishing:
 
 ```bash
-codex plugin marketplace add New-dev0/hermes-codex-learning
+codex plugin marketplace add https://github.com/New-dev0/hermes-codex-learning
 ```
 
 Then open Codex and install/enable the plugin:
@@ -101,3 +101,28 @@ This is a best-effort local policy layer, not a complete sandbox.
 ## Current status
 
 Initial public scaffold. The plugin is intentionally conservative: it writes learning artifacts locally and does not automatically mutate Hermes memories or existing user skills except creating a dedicated `codex-learning-inbox` skill if missing.
+
+## End-to-end verification
+
+```bash
+# 1. Marketplace + install
+codex plugin marketplace add https://github.com/New-dev0/hermes-codex-learning
+codex plugin add hermes-codex-learning --marketplace hermes-codex-learning-marketplace
+
+# 2. Verify install
+codex plugin marketplace list
+codex plugin list | grep hermes-codex-learning
+
+# 3. Trust hooks interactively, or bypass only for CI/local automation
+codex
+# then run /hooks and approve Hermes Codex Learning hooks
+
+# 4. Run a tiny Codex session
+mkdir -p /tmp/hermes-codex-e2e && cd /tmp/hermes-codex-e2e && git init
+codex exec --sandbox workspace-write --dangerously-bypass-hook-trust \
+  'Run one harmless shell command: python3 -c '''print("hermes-codex-e2e")'''. Then answer DONE.'
+
+# 5. Check Hermes artifacts
+find ~/.hermes/codex-learning ~/.hermes/skills/codex-learning-inbox -maxdepth 4 -type f -print
+python3 ~/.codex/plugins/cache/hermes-codex-learning-marketplace/hermes-codex-learning/0.1.0/scripts/summarize_codex_run.py
+```
